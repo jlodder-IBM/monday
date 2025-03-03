@@ -1,7 +1,7 @@
-from monday.query_joins import duplicate_board_query, create_board_by_workspace_query, get_boards_query, \
+from ..query_joins import duplicate_board_query, create_board_by_workspace_query, get_boards_query, \
     get_boards_by_id_query, get_board_items_query, get_columns_by_board_query
-from monday.resources.types import ItemsQueryRuleOperator
-from monday.tests.test_case_resource import BaseTestCase
+from ..resources.types import ItemsQueryRuleOperator
+from .test_case_resource import BaseTestCase
 
 
 class BoardTestCase(BaseTestCase):

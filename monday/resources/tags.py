@@ -1,5 +1,5 @@
-from monday.query_joins import get_tags_query
-from monday.resources.base import BaseResource
+from ..query_joins import get_tags_query
+from .base import BaseResource
 
 
 class TagResource(BaseResource):

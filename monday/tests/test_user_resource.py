@@ -1,5 +1,5 @@
-from monday.tests.test_case_resource import BaseTestCase
-from monday.query_joins import get_users_query
+from .test_case_resource import BaseTestCase
+from ..query_joins import get_users_query
 
 
 class UserTestCase(BaseTestCase):

@@ -1,4 +1,4 @@
-from monday.resources.base import BaseResource
+from .base import BaseResource
 
 
 class CustomResource(BaseResource):

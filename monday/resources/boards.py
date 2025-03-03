@@ -1,9 +1,9 @@
 from typing import List, Optional, Union, Any, Mapping
 
-from monday.query_joins import get_boards_query, get_boards_by_id_query, get_board_items_query, \
+from ..query_joins import get_boards_query, get_boards_by_id_query, get_board_items_query, \
     get_columns_by_board_query, create_board_by_workspace_query, duplicate_board_query
-from monday.resources.base import BaseResource
-from monday.resources.types import BoardKind, BoardState, BoardsOrderBy, DuplicateType
+from .base import BaseResource
+from .types import BoardKind, BoardState, BoardsOrderBy, DuplicateType
 
 
 class BoardResource(BaseResource):

@@ -1,5 +1,5 @@
 import unittest
-from monday.graphqlclient.client import GraphQLClient
+from ..graphqlclient.client import GraphQLClient
 
 
 class GraphQlClientTestCase(unittest.TestCase):

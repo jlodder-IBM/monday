@@ -1,5 +1,5 @@
-from monday.tests.test_case_resource import BaseTestCase
-from monday.query_joins import create_update_query, get_update_query, get_updates_for_item_query
+from .test_case_resource import BaseTestCase
+from ..query_joins import create_update_query, get_update_query, get_updates_for_item_query
 
 
 class UpdateTestCase(BaseTestCase):

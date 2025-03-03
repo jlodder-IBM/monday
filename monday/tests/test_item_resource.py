@@ -1,8 +1,8 @@
-from monday.tests.test_case_resource import BaseTestCase
-from monday.query_joins import mutate_item_query, get_item_query, update_item_query, get_item_by_id_query, \
+from .test_case_resource import BaseTestCase
+from ..query_joins import mutate_item_query, get_item_query, update_item_query, get_item_by_id_query, \
     update_multiple_column_values_query, mutate_subitem_query, add_file_to_column_query, delete_item_query, \
     archive_item_query, move_item_to_group_query
-from monday.utils import monday_json_stringify
+from ..utils import monday_json_stringify
 
 
 class ItemTestCase(BaseTestCase):

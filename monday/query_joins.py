@@ -2,8 +2,8 @@ import json
 from enum import Enum
 from typing import List, Union, Optional, Mapping, Any
 
-from monday.resources.types import BoardKind, BoardState, BoardsOrderBy, DuplicateType, ColumnType
-from monday.utils import monday_json_stringify, gather_params
+from .resources.types import BoardKind, BoardState, BoardsOrderBy, DuplicateType, ColumnType
+from .utils import monday_json_stringify, gather_params
 
 
 # Eventually I will organize this file better but you know what today is not that day.
@@ -27,6 +27,22 @@ def mutate_item_query(board_id, group_id, item_name, column_values, create_label
         }
     }''' % (board_id, group_id, item_name, monday_json_stringify(column_values),
             str(create_labels_if_missing).lower())
+
+    return query
+
+
+def duplicate_item_query(board_id, item_id, with_updates=True):
+
+    query = '''mutation 
+    {
+          duplicate_item (
+            board_id: %s, 
+            item_id: %s, 
+            with_updates: %s
+        ) {
+            id
+          }
+    }''' % (board_id, item_id, str(with_updates).lower())
 
     return query
 
@@ -91,7 +107,22 @@ def get_item_query(board_id, column_id, value, limit=None, cursor=None):
     return query
 
 
-def get_item_by_id_query(ids):
+def get_item_by_id_query(ids, get_subitems=False):
+    if not get_subitems :
+        get_subs = ''
+    else :
+        get_subs = '''subitems {
+                    id,
+                    name,
+                    board { id }
+                    column_values {
+                        id,
+                        text,
+                        value
+                    }
+                }
+        '''
+
     query = '''query
         {
             items (ids: %s) {
@@ -106,8 +137,9 @@ def get_item_by_id_query(ids):
                     text,
                     value
                 }
+    			%s
             }
-        }''' % ids
+        }''' % (ids, get_subs)
 
     return query
 

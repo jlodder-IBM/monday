@@ -1,6 +1,6 @@
 import unittest
 
-from monday.resources.types import BoardKind, BoardState, BoardsOrderBy, DuplicateType
+from ..resources.types import BoardKind, BoardState, BoardsOrderBy, DuplicateType
 
 
 class BaseTestCase(unittest.TestCase):

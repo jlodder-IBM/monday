@@ -1,5 +1,5 @@
-from monday.tests.test_case_resource import BaseTestCase
-from monday.query_joins import create_notification_query
+from .test_case_resource import BaseTestCase
+from ..query_joins import create_notification_query
 
 
 class NotificationsTestCase(BaseTestCase):

@@ -1,5 +1,5 @@
-from monday.tests.test_case_resource import BaseTestCase
-from monday.query_joins import get_groups_by_board_query, get_items_by_group_query, create_group_query, \
+from .test_case_resource import BaseTestCase
+from ..query_joins import get_groups_by_board_query, get_items_by_group_query, create_group_query, \
     duplicate_group_query, archive_group_query, delete_group_query
 
 

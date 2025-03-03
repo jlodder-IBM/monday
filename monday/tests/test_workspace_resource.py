@@ -1,5 +1,5 @@
-from monday.tests.test_case_resource import BaseTestCase
-from monday.query_joins import (get_workspaces_query, create_workspace_query,
+from .test_case_resource import BaseTestCase
+from ..query_joins import (get_workspaces_query, create_workspace_query,
                                 add_users_to_workspace_query, delete_users_from_workspace_query,
                                 add_teams_to_workspace_query, delete_teams_from_workspace_query)
 
